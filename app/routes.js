@@ -23,11 +23,12 @@ router.use(function (req, res, next) {
   next()
 });
 
-
-// CLEAR SESSION ==============================================================
-router.get('/cls', function (req, res) {
+// HOME ==============================================================
+router.get('/', function (req, res) {
   req.session.destroy()
-  res.render('index')
+  res.render(folder + 'index',{
+    "formAction":"/selectpermit/choose-permit2"
+  }) 
 })
 
 
