@@ -72,6 +72,12 @@ router.get('/error', function (req, res) {
     })    
 })
 
+router.get('/thanks', function (req, res) {
+    res.render('thanks',{
+      "qS":encodeURI( JSON.stringify(req.query) )
+    })    
+})
+
 
 
 
