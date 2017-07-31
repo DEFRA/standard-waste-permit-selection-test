@@ -22,7 +22,13 @@
       {% from "custom_inc/category-list-new-json2.html" import categories %}
       
       
-      <form method="post" action="{{formAction}}">
+      <form method="get" action="{{formAction}}">
+        
+        
+        <input type="hidden" name="back" value="{{back}}">
+        <input type="hidden" name="oldcat" value="{{oldcat}}">
+        
+        
         <div class="form-group">
           <fieldset aria-labelledby="radio_label">
             <legend class="Permit type visuallyhidden">{{title}}</legend>
@@ -30,11 +36,10 @@
         {% for c in categories %}
 
          
- <div class="multiple-choice">
-  <input id="{{c.category}}" type="radio" name="chosenCategory" value="{{c.category}}">
-<label for="{{c.category}}">
+         <div class="multiple-choice">
+          <input id="{{c.name}}" type="radio" name="cat" value="{{c.category}}">
+            <label for="{{c.category}}">
             {{c.category}} {{c.hint}}
-
             </label>
           </div>
 
@@ -49,6 +54,8 @@
         <div class="form-group">
             <input type="submit" class="button" value="Continue">
         </div>
+        
+        <p><a href="notfound?page=category">I really can't find one that applies</a></p>
 
 
       </form>

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+
+{% block page_title %}
+    {{errorText}} - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+          
+          <h1 class="heading-large error-summary-heading" id="error-summary-heading-example-1">
+            You didn't pick anything
+          </h1>
+          
+          <p><a href="category">Go back to choose</a></p>
+          
+          <p>I couldn't find what I needed in that list</p>
+          
+          <p><a href="https://www.smartsurvey.co.uk/s/TELLUS/?surveydata={{qS}}">Please leave us some comments</a></p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

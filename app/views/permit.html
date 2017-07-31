@@ -18,8 +18,8 @@
       <h1 class="heading-large" id="radio_label">{{title}}</h1>
       
       <div class="panel panel-border-wide">
-      <p>Showing permits for {{chosenCategory | lower }}. <br>
-          <a href="/permit-category">
+      <p>Showing permits for {{ cat | lower }}. <br>
+          <a href="category?back={{back+1}}&amp;oldcat={{cat}}">
             Back to all permit groups
           </a>
         </p>
@@ -29,14 +29,20 @@
       {% from "custom_inc/permit-list-json.html" import permits %}
       
 
-      <form method="post" action="{{formAction}}">
+      <form method="get" action="{{formAction}}">
+        
+        <input type="hidden" name="back" value="{{back}}">
+        <input type="hidden" name="oldcat" value="{{oldcat}}">
+        <input type="hidden" name="cat" value="{{cat}}">
+          
+          
         <div class="form-group">
           <fieldset class="permitList" aria-labelledby="radio_label">
             <legend="Permit">
             
 {% for pNumber, pData in permits %}
 
-  {% if pData.friendlyCategory2==chosenCategory %}
+  {% if pData.friendlyCategory2==cat %}
     {% if pData.canApplyOnPaper=="Yes" %}
     
       {% if pData.friendlyWeight!="" %}
@@ -59,8 +65,8 @@
     
         {{ macros.radio_button(
           label | join | safe,
-          "chosenPermitID",
-          loop.index,
+          "permit",
+          pNumber,
           pNumber,
           " permitItem"
         ) }}
@@ -79,6 +85,9 @@
         <div class="form-group">
             <input type="submit" class="button" value="Continue">
         </div>
+        
+        
+        <p><a href="notfound?page=permit">I really can't find one that applies</a></p>
 
 
 

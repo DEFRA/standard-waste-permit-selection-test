@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+
+{% block page_title %}
+    {{errorText}} - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+          
+          <h1 class="heading-large error-summary-heading" id="error-summary-heading-example-1">
+            Are you sure you can't find your permit?
+          </h1>
+          
+          <p>&nbsp;</p>
+          
+          <p><a href="category">Have another go</a></p>
+          
+          <p><a href="thanks?page=notfound">Sorry, I can't find the permit I need</a></p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
