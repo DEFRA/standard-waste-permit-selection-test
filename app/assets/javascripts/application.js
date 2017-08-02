@@ -21,21 +21,4 @@ $(document).ready(function () {
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
   
-  // On pages with multiple details, close all when new one is opened
-  $('details.closeOnOpen').click(function(){
-    $('details.closeOnOpen').not(this).removeAttr('open');
-  })
-  
-  $( "form#autoSubmit" ).submit();
-
-  // Hide new tab span
-  $("span.newtab").toggleClass('visually-hidden');
-  // Show new tab message on click
-  $("a[target='_blank']").one("click", function(e){
-      e.preventDefault();
-      $(this).blur();
-      $(this).children( 'span.newtab' ).toggleClass('visually-hidden').addClass('bold-small');
-  });
-
-
 })
