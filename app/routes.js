@@ -6,7 +6,7 @@ var router = express.Router()
 router.get('/', function (req, res) {
   res.render('index',{
     "formAction":"/category"
-  }) 
+  })
 })
 
 
@@ -19,13 +19,13 @@ router.get('/category', function (req, res) {
   } else {
     catobj.back = req.query['back']
   }
-  
+
   if( typeof req.query['oldcat']==='undefined' ) {
   } else {
     catobj.oldcat = req.query['oldcat']
   }
-  
-  res.render('category',catobj) 
+
+  res.render('category',catobj)
 })
 
 
@@ -41,13 +41,13 @@ router.get('/permit', function (req, res) {
       } else {
         permobj.back = req.query['back']
       }
-      
+
       if( typeof req.query['oldcat']==='undefined' ) {
       } else {
         permobj.oldcat = req.query['oldcat']
       }
-      
-      res.render('permit',permobj)    
+
+      res.render('permit',permobj)
   }
 })
 
@@ -55,27 +55,31 @@ router.get('/permit', function (req, res) {
 // Found or error ==============================================================
 
 router.get('/found', function (req, res) {
+    req.query.page = 'found'
     res.render('found',{
       "qS":encodeURI( JSON.stringify(req.query) )
-    })    
+    })
 })
 
 router.get('/notfound', function (req, res) {
+    req.query.page = 'notfound'
     res.render('notfound',{
       "qS":encodeURI( JSON.stringify(req.query) )
-    })    
+    })
 })
 
 router.get('/error', function (req, res) {
+    req.query.page = 'error'
     res.render('error',{
       "qS":encodeURI( JSON.stringify(req.query) )
-    })    
+    })
 })
 
 router.get('/thanks', function (req, res) {
+    req.query.page = 'thanks'
     res.render('thanks',{
       "qS":encodeURI( JSON.stringify(req.query) )
-    })    
+    })
 })
 
 
@@ -88,15 +92,15 @@ router.get('/thanks', function (req, res) {
 // Permit search ===================================================================
 
 router.get('/search-permit/index', function (req, res) {
-    res.render(folder + '/search-permit/index',{ 
+    res.render(folder + '/search-permit/index',{
       "formAction": "/search-permit/index"
     })
 })
 
 router.post('/search-permit/index', function (req, res) {
-    res.render(folder + '/search-permit/index',{ 
+    res.render(folder + '/search-permit/index',{
       "formAction":"/search-permit/index",
-      "searchTerm":req.body.searchTerm 
+      "searchTerm":req.body.searchTerm
     })
 })
 
