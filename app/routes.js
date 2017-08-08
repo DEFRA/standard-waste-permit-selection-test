@@ -5,7 +5,7 @@ router.use(function (req, res, next) {
   // set a folder and store in locals
   // this can then be used in pages as {{folder}}
   //res.locals.surveyURL="https://www.smartsurvey.co.uk/s/TELLUS/?surveydata="
-  res.locals.surveyURL="http://www.smartsurvey.co.uk/s/7Y0HE/?"
+  res.locals.surveyURL="https://www.smartsurvey.co.uk/s/TELLUS/?"
   next()
 });
 
