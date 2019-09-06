@@ -221,6 +221,12 @@ span.postcode {
   padding-bottom: 17px;
 }
 
+@include media(mobile) {
+  .wex_exemption{
+    width: auto;
+  }
+}
+
 .wex_exemption__code{
   width: 1.8em;
   display: inline-block;
