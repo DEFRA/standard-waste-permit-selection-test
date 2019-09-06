@@ -31,10 +31,10 @@ $path: "/public/images/";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 // Protoype specific styles by MG and PM. Do not import for production code.
-@import 'prototype'; 
+@import 'prototype';
 
-// used for experimental guidance pages. 
-// @import 'verify'; 
+// used for experimental guidance pages.
+// @import 'verify';
 
 // Choose permit radio button list
 .permitSelector {
@@ -63,7 +63,7 @@ label.permitItem {
     }
 }
 
-// style phone number links on mobile only. Not ea-footer. 
+// style phone number links on mobile only. Not ea-footer.
 @include media(tablet) {
   main a[href^="tel:"] {
     text-decoration: none;
@@ -72,12 +72,12 @@ label.permitItem {
 }
 
 // Add spacing below details (progressive disclosure)
-// Check if this is always required. If not, introduce class. 
+// Check if this is always required. If not, introduce class.
 details {
   margin-bottom: 30px;
 }
 
-// Address-manual. Spacing bewteen postcode and change link. 
+// Address-manual. Spacing bewteen postcode and change link.
 span.postcode {
   margin-right: 10px;
 }
@@ -209,4 +209,9 @@ span.postcode {
 }
 .ea-footer .inline {
     display: inline;
+}
+
+// Exemptions screen
+.wex_exemptions{
+  border-bottom: 1px solid #bfc1c3;
 }

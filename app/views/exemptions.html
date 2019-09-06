@@ -25,14 +25,14 @@
           <fieldset>
 
             <legend>
-              <h2>Select all the waste exemptions you need to add to the registration</h2>
+              <h2 class="body-text">Select all the waste exemptions you need to add to the registration</h2>
             </legend>
 
             {% from "./json/exemption-json.html" import exemptions %}
 
             {% for exCode, exData in exemptions %}
 
-                <div class="multiple-choice">
+                <div class="multiple-choice wex_exemption">
                   <input id="{{ exCode }}" name="Exemptions" type="checkbox" value="{{ exCode }}">
                   <label for="{{ exCode }}">{{ exCode }} {{ exData.Title }}</label>
                 </div>
