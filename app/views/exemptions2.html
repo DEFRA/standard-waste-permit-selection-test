@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% set title = "Which exemptions are needed for this waste operation? (2)" %}
+
+{% block page_title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_prototype.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="#" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+		      {{title}}
+	    </h1>
+
+      <form method="post" action="{{formAction}}">
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend>
+              <h2 class="wex_legend">Select all the waste exemptions you need to add to the registration</h2>
+            </legend>
+
+            {% from "./json/exemption-json.html" import exemptions %}
+
+            {% for exCode, exData in exemptions %}
+
+                <div class="multiple-choice wex_exemption">
+                  <label>
+                    <input id="{{ exCode }}" name="Exemptions" type="checkbox" value="{{ exCode }}">
+                  <span class="wex_exemption__code">{{ exCode }}</span> <span class="wex_exemption__title">{{ exData.Title }}<span>
+                  </label>
+                </div>
+
+            {% else %}
+              <p>No data</p>
+            {% endfor %}
+
+
+          </fieldset>
+        </div>
+
+
+        <div class="form-group">
+            <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
