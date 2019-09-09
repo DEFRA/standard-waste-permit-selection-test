@@ -1,0 +1,613 @@
+{% extends "layout.html" %}
+
+{% set title = "Which exemptions are needed for this waste operation?" %}
+
+{% block page_title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_prototype.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="#" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+		      {{title}}
+	    </h1>
+
+      <p>Select all the waste exemptions you need to add to the registration</p>
+
+      <form method="post" action="{{formAction}}">
+
+        <div class="form-group ">
+           <fieldset id="matched_exemptions">
+
+             <table role="presentation">
+               <thead>
+               <tr>
+                 <th><span class="heading-small">Exemption</span></th>
+                 <th><span class="heading-small">Description</span></th>
+               </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U1" type="checkbox" value="1" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U1">
+                           U1<span class="visually-hidden"> Use of waste in construction</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Use of waste in construction</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U2" type="checkbox" value="2" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U2">
+                           U2<span class="visually-hidden"> Use of baled end-of-life tyres in construction</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Use of baled end-of-life tyres in construction</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U3" type="checkbox" value="3" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U3">
+                           U3<span class="visually-hidden"> Construction of entertainment or educational installations</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Construction of entertainment or educational installations</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U4" type="checkbox" value="4" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U4">
+                           U4<span class="visually-hidden"> Burning of waste as a fuel in a small appliance</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Burning of waste as a fuel in a small appliance</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U5" type="checkbox" value="5" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U5">
+                           U5<span class="visually-hidden"> Using biodiesel produced from waste as fuel</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Using biodiesel produced from waste as fuel</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U6" type="checkbox" value="6" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U6">
+                           U6<span class="visually-hidden"> Using sludge to re-seed a waste water treatment plant</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Using sludge to re-seed a waste water treatment plant</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U7" type="checkbox" value="7" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U7">
+                           U7<span class="visually-hidden"> Using effluent to clean a highway gravel bed</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Using effluent to clean a highway gravel bed</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U8" type="checkbox" value="8" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U8">
+                           U8<span class="visually-hidden"> Using waste for a specified purpose</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Using waste for a specified purpose</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U9" type="checkbox" value="9" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U9">
+                           U9<span class="visually-hidden"> Using waste to manufacture finished goods</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Using waste to manufacture finished goods</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U10" type="checkbox" value="10" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U10">
+                           U10<span class="visually-hidden"> Spreading waste to benefit agricultural land</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Spreading waste to benefit agricultural land</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U11" type="checkbox" value="11" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U11">
+                           U11<span class="visually-hidden"> Spreading waste to benefit non-agricultural land</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Spreading waste to benefit non-agricultural land</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U12" type="checkbox" value="12" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U12">
+                           U12<span class="visually-hidden"> Using mulch</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Using mulch</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U13" type="checkbox" value="13" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U13">
+                           U13<span class="visually-hidden"> Spreading plant matter to provide benefits</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Spreading plant matter to provide benefits</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U14" type="checkbox" value="14" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U14">
+                           U14<span class="visually-hidden"> Incorporating ash into soil</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Incorporating ash into soil</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U15" type="checkbox" value="15" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U15">
+                           U15<span class="visually-hidden"> Spreading of pig and poultry ash</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Spreading of pig and poultry ash</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-U16" type="checkbox" value="16" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-U16">
+                           U16<span class="visually-hidden"> Using depolluted end-of-life vehicles for parts</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Using depolluted end-of-life vehicles for parts</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T1" type="checkbox" value="17" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T1">
+                           T1<span class="visually-hidden"> Cleaning, washing, spraying or coating relevant waste</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Cleaning, washing, spraying or coating relevant waste</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T2" type="checkbox" value="18" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T2">
+                           T2<span class="visually-hidden"> Recovering textiles</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Recovering textiles</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T4" type="checkbox" value="19" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T4">
+                           T4<span class="visually-hidden"> Preparatory treatments (baling, sorting, shredding etc)</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Preparatory treatments (baling, sorting, shredding etc)</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T5" type="checkbox" value="20" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T5">
+                           T5<span class="visually-hidden"> Screening and blending waste</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Screening and blending waste</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T6" type="checkbox" value="21" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T6">
+                           T6<span class="visually-hidden"> Treating waste wood and waste plant matter by chipping, shredding, cutting or pulverising</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Treating waste wood and waste plant matter by chipping, shredding, cutting or pulverising</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T8" type="checkbox" value="22" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T8">
+                           T8<span class="visually-hidden"> Mechanically treating end-of-life tyres</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Mechanically treating end-of-life tyres</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T9" type="checkbox" value="23" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T9">
+                           T9<span class="visually-hidden"> Recovering scrap metal</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Recovering scrap metal</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T10" type="checkbox" value="24" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T10">
+                           T10<span class="visually-hidden"> Sorting mixed waste</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Sorting mixed waste</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T12" type="checkbox" value="25" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T12">
+                           T12<span class="visually-hidden"> Manually treating waste</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Manually treating waste</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T13" type="checkbox" value="26" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T13">
+                           T13<span class="visually-hidden"> Treating waste food</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Treating waste food</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T14" type="checkbox" value="27" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T14">
+                           T14<span class="visually-hidden"> Crushing and emptying vehicle waste oil filters</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Crushing and emptying vehicle waste oil filters</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T15" type="checkbox" value="28" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T15">
+                           T15<span class="visually-hidden"> Treating waste aerosol cans</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Treating waste aerosol cans</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T16" type="checkbox" value="29" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T16">
+                           T16<span class="visually-hidden"> Treating waste toner and ink cartridges</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Treating waste toner and ink cartridges</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T17" type="checkbox" value="30" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T17">
+                           T17<span class="visually-hidden"> Crushing waste fluorescent tubes</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Crushing waste fluorescent tubes</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T18" type="checkbox" value="31" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T18">
+                           T18<span class="visually-hidden"> Using flocculants to remove water from waste</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Using flocculants to remove water from waste</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T19" type="checkbox" value="32" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T19">
+                           T19<span class="visually-hidden"> Physical and chemical treatment of waste edible oil and fat to produce biodiesel</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Physical and chemical treatment of waste edible oil and fat to produce biodiesel</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T20" type="checkbox" value="33" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T20">
+                           T20<span class="visually-hidden"> Treating waste at a water treatment works</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Treating waste at a water treatment works</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T21" type="checkbox" value="34" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T21">
+                           T21<span class="visually-hidden"> Recovery of waste at a waste water treatment works</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Recovery of waste at a waste water treatment works</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T23" type="checkbox" value="35" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T23">
+                           T23<span class="visually-hidden"> Aerobic composting and associated prior treatment</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Aerobic composting and associated prior treatment</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T24" type="checkbox" value="36" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T24">
+                           T24<span class="visually-hidden"> Anaerobic digestion at premises used for agriculture and burning resulting biogas</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Anaerobic digestion at premises used for agriculture and burning resulting biogas</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T25" type="checkbox" value="37" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T25">
+                           T25<span class="visually-hidden"> Anaerobic digestion at premises not used for agriculture and burning resulting biogas</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Anaerobic digestion at premises not used for agriculture and burning resulting biogas</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T26" type="checkbox" value="38" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T26">
+                           T26<span class="visually-hidden"> Treatment of kitchen waste in a wormery</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Treatment of kitchen waste in a wormery</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T27" type="checkbox" value="39" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T27">
+                           T27<span class="visually-hidden"> Treatment of sheep dip using organophosphate-degrading enzyme</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Treatment of sheep dip using organophosphate-degrading enzyme</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T28" type="checkbox" value="40" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T28">
+                           T28<span class="visually-hidden"> Sort and denature controlled drugs for disposal</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Sort and denature controlled drugs for disposal</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T29" type="checkbox" value="41" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T29">
+                           T29<span class="visually-hidden"> Treatment of non-hazardous pesticide washings by carbon filtration for disposal</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Treatment of non-hazardous pesticide washings by carbon filtration for disposal</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T30" type="checkbox" value="42" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T30">
+                           T30<span class="visually-hidden"> Recovery of silver</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Recovery of silver</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T31" type="checkbox" value="43" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T31">
+                           T31<span class="visually-hidden"> Recovery of monopropylene glycol from aircraft antifreeze fluids</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Recovery of monopropylene glycol from aircraft antifreeze fluids</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T32" type="checkbox" value="44" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T32">
+                           T32<span class="visually-hidden"> Treatment of waste in a biobed or biofilter</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Treatment of waste in a biobed or biofilter</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-T33" type="checkbox" value="45" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-T33">
+                           T33<span class="visually-hidden"> Recovery of central heating oil by filtration</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Recovery of central heating oil by filtration</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-D1" type="checkbox" value="46" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-D1">
+                           D1<span class="visually-hidden"> Depositing waste from dredging inland waters</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Depositing waste from dredging inland waters</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-D2" type="checkbox" value="47" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-D2">
+                           D2<span class="visually-hidden"> Depositing waste from a railway sanitary convenience</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Depositing waste from a railway sanitary convenience</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-D3" type="checkbox" value="48" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-D3">
+                           D3<span class="visually-hidden"> Depositing waste from a portable sanitary convenience</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Depositing waste from a portable sanitary convenience</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-D4" type="checkbox" value="49" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-D4">
+                           D4<span class="visually-hidden"> Depositing agricultural waste consisting of plant tissue under a Plant Health Notice</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Depositing agricultural waste consisting of plant tissue under a Plant Health Notice</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-D5" type="checkbox" value="50" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-D5">
+                           D5<span class="visually-hidden"> Depositing waste samples for testing or analysis</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Depositing waste samples for testing or analysis</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-D6" type="checkbox" value="51" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-D6">
+                           D6<span class="visually-hidden"> Disposal by incineration</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Disposal by incineration</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-D7" type="checkbox" value="52" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-D7">
+                           D7<span class="visually-hidden"> Burning waste in the open</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Burning waste in the open</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-D8" type="checkbox" value="53" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-D8">
+                           D8<span class="visually-hidden"> Burning waste at a port under a Plant Health Notice</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Burning waste at a port under a Plant Health Notice</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-S1" type="checkbox" value="54" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-S1">
+                           S1<span class="visually-hidden"> Storing waste in secure containers</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Storing waste in secure containers</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-S2" type="checkbox" value="55" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-S2">
+                           S2<span class="visually-hidden"> Storing waste in a secure place</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Storing waste in a secure place</span></td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <div class="multiple-choice">
+                         <input id="exemptions_form_checkbox-S3" type="checkbox" value="56" name="exemptions_form[exemptions][]" />
+                         <label for="exemptions_form_checkbox-S3">
+                           S3<span class="visually-hidden"> Storing sludge</span>
+     </label>                  </div>
+                     </td>
+                     <td><span>Storing sludge</span></td>
+                   </tr>
+               </tbody>
+             </table>
+           </fieldset>
+         </div>
+
+
+        <div class="form-group">
+            <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
