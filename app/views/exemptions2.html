@@ -60,13 +60,15 @@
 		      {{title}}
 	    </h1>
 
+      <p>Select all the waste exemptions you need to add to the registration</p>
+
       <form method="post" action="{{formAction}}">
 
         <div class="form-group">
           <fieldset>
 
-            <legend>
-              <h2 class="wex_legend">Select all the waste exemptions you need to add to the registration</h2>
+            <legend class="visually-hidden">
+              Exemptions
             </legend>
 
             {% from "./json/exemption-json.html" import exemptions %}
