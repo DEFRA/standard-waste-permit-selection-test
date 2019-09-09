@@ -8,6 +8,21 @@
 
 {% block content %}
 
+<style>
+
+.wex_exemption + label::before {
+    content: "";
+    border: 2px solid;
+    background: transparent;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+</style>
+
 <main id="content" role="main">
   {% include "includes/phase_banner_prototype.html" %}
 
