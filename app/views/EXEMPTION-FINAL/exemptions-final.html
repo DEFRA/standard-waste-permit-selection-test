@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Which exemptions are needed for this waste operation?</title>
+</head>
+
+<body>
+    <main id="content" role="main">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+
+                <h1 class="heading-large">
+		      Which exemptions are needed for this waste operation?
+	    </h1>
+
+                <p>Select all the waste exemptions you need to add to the registration</p>
+
+                <form>
+
+                    <!-- UPDATED CODE ############################################ -->
+
+                    <div class="form-group">
+                        <fieldset>
+
+                            <legend class="visually-hidden">
+                                Exemptions
+                            </legend>
+
+                            <!-- LOOP FOR EACH EXEMPTION ############################## -->
+
+                            <div class="multiple-choice wex_exemption">
+                                <label for="exemptions_form_checkbox-{exemptionCode}">
+                                    <input id="exemptions_form_checkbox-{exemptionCode}" type="checkbox" name="exemptions_form[exemptions][]" value="{number}">
+                                    <span class="wex_exemption__code">{exemptionCode}</span> <span class="wex_exemption__title">{exemptionTitle}</span>
+                                </label>
+                            </div>
+
+                            <!-- END LOOP FOR EACH EXEMPTION ########################## -->
+
+                        </fieldset>
+                    </div>
+
+                    <!-- END UPDATED CODE ######################################## -->
+
+                    <div class="form-group">
+                        <input type="submit" name="commit" value="Continue" class="button" />
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
