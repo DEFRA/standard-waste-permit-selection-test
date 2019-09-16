@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set title = "Which exemptions are needed for this waste operation? (3b)" %}
+{% set title = "Which exemptions are needed for this waste operation? (3c)" %}
 
 {% block page_title %}
     {{title}}
@@ -47,6 +47,11 @@
     opacity: 1;
 }
 
+.wex_exemption input:focus {
+    outline: 3px solid #ffbf47;
+    outline-offset: 0;
+}
+
 .wex_exemption input {
     position: absolute;
     cursor: pointer;
@@ -59,11 +64,6 @@
     zoom: 1;
     filter: alpha(opacity=0);
     opacity: 0;
-}
-
-.wex_exemption input:focus {
-    outline: 3px solid #ffbf47;
-    outline-offset: 0;
 }
 
 </style>
