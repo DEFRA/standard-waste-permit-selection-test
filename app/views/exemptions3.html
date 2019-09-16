@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set title = "Which exemptions are needed for this waste operation? (3c)" %}
+{% set title = "Which exemptions are needed for this waste operation? (3d)" %}
 
 {% block page_title %}
     {{title}}
@@ -44,6 +44,10 @@
 .wex_exemption input:checked + span.wex_exemption__code::after {
     zoom: 1;
     filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+.multiple-choice input {
     opacity: 1;
 }
 
